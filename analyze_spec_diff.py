@@ -15,12 +15,16 @@ from datetime import datetime
 
 def get_file_info(file_path):
     """ファイル情報を取得"""
-    stats = os.stat(file_path)
-    return {
-        'path': str(file_path),
-        'size': stats.st_size,
-        'modified': datetime.fromtimestamp(stats.st_mtime).strftime('%Y-%m-%d %H:%M:%S')
-    }
+    try:
+        stats = os.stat(file_path)
+        return {
+            'path': str(file_path),
+            'size': stats.st_size,
+            'modified': datetime.fromtimestamp(stats.st_mtime).strftime('%Y-%m-%d %H:%M:%S')
+        }
+    except (PermissionError, OSError) as e:
+        print(f"⚠️  Warning: Could not access {file_path}: {e}")
+        return None
 
 def scan_directory(root_path):
     """ディレクトリをスキャンしてファイル情報を収集"""
@@ -31,7 +35,9 @@ def scan_directory(root_path):
         if file_path.is_file():
             # ルートからの相対パスをキーとする
             rel_path = file_path.relative_to(root)
-            files[str(rel_path)] = get_file_info(file_path)
+            file_info = get_file_info(file_path)
+            if file_info:  # None でない場合のみ追加
+                files[str(rel_path)] = file_info
     
     return files
 
@@ -47,6 +53,8 @@ def compare_specifications():
     new_files = scan_directory(new_path)
     
     # ファイル名のみを比較するための正規化
+    # 注意: バージョン間でファイル名が変更されるため、ファイル名ベースの比較を使用
+    # （例: 11eminj-acw-15-c-t.xlsx → 11eminj-acw-16-a-t.xlsx）
     base_names = {Path(k).name: k for k in base_files.keys()}
     new_names = {Path(k).name: k for k in new_files.keys()}
     
@@ -78,6 +86,7 @@ def compare_specifications():
             })
             
             # サイズが異なる場合は変更ありと判断
+            # 注意: ファイル形式（Office文書）の特性上、サイズ変更は内容変更を示す良い指標
             if base_files[base_path_rel]['size'] != new_files[new_path_rel]['size']:
                 modified_files.append({
                     'name': name,
@@ -146,7 +155,7 @@ def generate_markdown_report(analysis):
             base_size = file['base']['size']
             new_size = file['new']['size']
             diff = new_size - base_size
-            diff_str = f"+{diff:,}" if diff > 0 else f"{diff:,}"
+            diff_str = f"{diff:+,}"
             report.append(f"| {name} | {base_size:,} | {new_size:,} | {diff_str} bytes |")
         report.append("")
     
