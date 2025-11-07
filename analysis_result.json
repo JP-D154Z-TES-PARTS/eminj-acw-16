@@ -1,0 +1,113 @@
+{
+  "added": [
+    {
+      "path": "new/eminj-acw-16-a-t/11eminj-acw-16-a-t.docx",
+      "size": 613881,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "new/eminj-acw-16-a-t/eminj-kjcw00-1600-a-t-zkj.xlsx",
+      "size": 23418,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "new/eminj-acw-16-a-t/11eminj-acw-16-a-t.xlsx",
+      "size": 68990,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "new/eminj-acw-16-a-t/11eminj-acw-16-a-t_フリーポート設定書.xlsx",
+      "size": 184341,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "new/eminj-acw-16-a-t/document/参照元チェックシート_ver2.11_eminj-acw-16-a-t.xlsx",
+      "size": 713006,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "new/eminj-acw-16-a-t/document/定数管理エクセル_eminj-acw-16-a-t.xlsm",
+      "size": 144758,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "new/eminj-acw-16-a-t/document/参照先チェックシート_eminj-acw-16-a-t.xlsx",
+      "size": 26293,
+      "modified": "2025-11-07 02:11:34"
+    }
+  ],
+  "removed": [
+    {
+      "path": "base/eminj-acw-15-c-t_spec/11eminj-acw-15-c-t.xlsx",
+      "size": 66126,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "base/eminj-acw-15-c-t_spec/11eminj-acw-15-c-t.docx",
+      "size": 613295,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "base/eminj-acw-15-c-t_spec/11eminj-acw-15-c-t_フリーポート設定書.xlsx",
+      "size": 183571,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "base/eminj-acw-15-c-t_src/eminj_c_mat.c",
+      "size": 43380,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "base/eminj-acw-15-c-t_src/eminj_l_mat.c",
+      "size": 295410,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "base/eminj-acw-15-c-t_src/部品情報_eminj-pcw00-1500.xlsx",
+      "size": 26424,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "base/eminj-acw-15-c-t_src/eminj.h",
+      "size": 98625,
+      "modified": "2025-11-07 02:11:34"
+    },
+    {
+      "path": "base/eminj-acw-15-c-t_src/eminj_c.h",
+      "size": 17589,
+      "modified": "2025-11-07 02:11:34"
+    }
+  ],
+  "common": [
+    {
+      "name": "ロジック変更シート_ver9.09_eminj.xlsx",
+      "base": {
+        "path": "base/eminj-acw-15-c-t_spec/document/ロジック変更シート_ver9.09_eminj.xlsx",
+        "size": 5621648,
+        "modified": "2025-11-07 02:11:34"
+      },
+      "new": {
+        "path": "new/eminj-acw-16-a-t/document/ロジック変更シート_ver9.09_eminj.xlsx",
+        "size": 5711490,
+        "modified": "2025-11-07 02:11:34"
+      }
+    }
+  ],
+  "modified": [
+    {
+      "name": "ロジック変更シート_ver9.09_eminj.xlsx",
+      "base": {
+        "path": "base/eminj-acw-15-c-t_spec/document/ロジック変更シート_ver9.09_eminj.xlsx",
+        "size": 5621648,
+        "modified": "2025-11-07 02:11:34"
+      },
+      "new": {
+        "path": "new/eminj-acw-16-a-t/document/ロジック変更シート_ver9.09_eminj.xlsx",
+        "size": 5711490,
+        "modified": "2025-11-07 02:11:34"
+      }
+    }
+  ],
+  "base_total": 9,
+  "new_total": 8
+}
